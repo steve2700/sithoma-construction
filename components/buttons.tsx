@@ -30,7 +30,7 @@ export function CallButton({ size = "lg", look = "red", label = "Call Now", puls
   )
 }
 
-export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp Us", message = "Hi Emergency Generator Repairs, I need help with my generator.", className = "" }: { size?: Size; look?: Look; label?: string; message?: string; className?: string }) {
+export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp Us", message = "Hi Sithoma Construction, I need a quote.", className = "" }: { size?: Size; look?: Look; label?: string; message?: string; className?: string }) {
   return (
     <a href={WA_LINK(message)} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className={`${base} ${sizes[size]} ${looks[look]} ${className}`}>
       <WhatsAppIcon className="h-6 w-6" />
@@ -49,7 +49,7 @@ export function LinkButton({ href, children, size = "lg", look = "dark", classNa
 
 export function CircleCall({ className = "" }: { className?: string }) {
   return (
-    <a href={`tel:${SITE.phoneTel}`} onClick={trackCallClick} aria-label={`Call Emergency Generator Repairs on ${SITE.phoneDisplay}`} className={`flex h-12 w-12 items-center justify-center rounded-full bg-signal text-ink transition hover:bg-signal-dark active:scale-95 ${className}`}>
+    <a href={`tel:${SITE.phoneTel}`} onClick={trackCallClick} aria-label={`Call Sithoma Construction on ${SITE.phoneDisplay}`} className={`flex h-12 w-12 items-center justify-center rounded-full bg-signal text-ink transition hover:bg-signal-dark active:scale-95 ${className}`}>
       <PhoneIcon className="h-5 w-5" />
     </a>
   )

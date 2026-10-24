@@ -2,63 +2,54 @@ export interface Area {
   slug: string
   name: string
   places: string[]
+  homes: string
   context: string
   image: string
   imageAlt: string
 }
 
 export const AREAS: Area[] = [
-  { slug: "johannesburg", name: "Johannesburg", places: ["Rosebank", "Melville", "Linden", "City Deep"],
-    context: "In Johannesburg, a power cut can stop a business and a household at the same moment. We repair and service home and business generators across the city.",
-    image: "/industrial-generator-exterior.jpg", imageAlt: "Silent industrial generator installed outside" },
-  { slug: "sandton", name: "Sandton", places: ["Bryanston", "Morningside", "Rivonia", "Fourways"],
-    context: "Sandton homes, offices and complexes depend on standby power. We repair, service and maintain generators and changeover systems.",
-    image: "/residential-generator-unit.jpg", imageAlt: "Residential generator unit installed at a home" },
-  { slug: "pretoria", name: "Pretoria", places: ["Menlo Park", "Brooklyn", "Silverton", "Waterkloof"],
-    context: "From family homes in Waterkloof to workshops in Silverton, Pretoria runs on backup power when the grid fails.",
-    image: "/technicians-servicing-nexus-generator.jpg", imageAlt: "Technicians servicing a generator engine" },
-  { slug: "centurion", name: "Centurion", places: ["Irene", "Eldoraigne", "Lyttelton", "Samrand"],
-    context: "Centurion estates, offices and industrial sites rely on generators. We keep them running with repairs and scheduled servicing.",
-    image: "/technicians-testing-silent-diesel-generators.jpg", imageAlt: "Technicians testing silent diesel generators" },
-  { slug: "midrand", name: "Midrand", places: ["Halfway House", "Kyalami", "Noordwyk", "Vorna Valley"],
-    context: "Midrand businesses and homes cannot afford long outages. We repair and service diesel and petrol generators across Midrand.",
-    image: "/diesel-generator-fawde-engine-bay.jpg", imageAlt: "Diesel generator engine bay" },
-  { slug: "randburg", name: "Randburg", places: ["Northcliff", "Ferndale", "Fontainebleau", "Randpark Ridge"],
-    context: "Randburg households use portable and standby generators every time the lights go out. We repair them fast and fairly.",
-    image: "/portable-generators-lineup.jpg", imageAlt: "Portable generators lined up in a yard" },
-  { slug: "roodepoort", name: "Roodepoort", places: ["Florida", "Constantia Kloof", "Weltevreden Park", "Wilgeheuwel"],
-    context: "We repair petrol and diesel generators for homes and small businesses across Roodepoort and the West Rand.",
-    image: "/refurbished-small-petrol-generator-engine.jpg", imageAlt: "Refurbished small petrol generator engine" },
-  { slug: "krugersdorp", name: "Krugersdorp", places: ["Luipaardsvlei", "Chamdor", "Noordheuwel", "Krugersdorp West"],
-    context: "Krugersdorp and the West Rand outskirts have many farms, workshops and homes that rely on their own power.",
-    image: "/trailer-mounted-generator.jpg", imageAlt: "Trailer mounted generator" },
-  { slug: "germiston", name: "Germiston", places: ["Wadeville", "Primrose", "Dinwiddie", "Elandsfontein"],
-    context: "Germiston factories, workshops and homes use generators to keep working through outages. We repair and maintain them.",
-    image: "/on-site-generator-canopy-service.jpg", imageAlt: "Technician servicing a canopy generator on site" },
-  { slug: "kempton-park", name: "Kempton Park", places: ["Isando", "Rhodesfield", "Bonaero Park", "Birchleigh"],
-    context: "Kempton Park businesses and households call us when the generator will not start or will not switch over.",
-    image: "/team-generator-engine-valve-adjustment.jpg", imageAlt: "Team adjusting engine valves on a generator" },
-  { slug: "boksburg", name: "Boksburg", places: ["Jet Park", "Parkrand", "Beyers Park", "Sunward Park"],
-    context: "Boksburg warehouses, shops and homes depend on backup power. We repair and service generators of all sizes.",
-    image: "/onsite-portable-generator-maintenance.jpg", imageAlt: "Technician maintaining a portable generator on site" },
-  { slug: "benoni", name: "Benoni", places: ["Northmead", "Rynfield", "Lakefield", "Farrarmere"],
-    context: "We repair and service home and business generators for Benoni and the East Rand.",
-    image: "/dismantled-portable-generator-frame-before-repair.jpg", imageAlt: "Portable generator frame dismantled for repair" },
+  { slug: "midrand", name: "Midrand", places: ["President Park", "Halfway House", "Kyalami", "Noordwyk"], homes: "estates, townhouse complexes and family homes",
+    context: "Midrand is where we are based, so we know the estates, complexes and family homes here well. We repair and install finishes across Midrand and the surrounding suburbs.",
+    image: "/exterior-house-painting-double-storey-home.jpg", imageAlt: "Double storey home being painted in Midrand" },
+  { slug: "sandton", name: "Sandton", places: ["Bryanston", "Morningside", "Rivonia", "Sunninghill"], homes: "upmarket homes, apartments and offices",
+    context: "Sandton homes and offices expect a neat, precise finish. We repair and install painting, ceilings, tiling and more across Sandton.",
+    image: "/led-cove-ceiling-design-installation.jpg", imageAlt: "LED cove ceiling design installed in a home" },
+  { slug: "fourways", name: "Fourways", places: ["Fourways Gardens", "Lonehill", "Dainfern", "Paulshof"], homes: "lifestyle estates and security complexes",
+    context: "Fourways estates and complexes need reliable contractors who respect the rules and finish cleanly. We work across Fourways and its neighbouring suburbs.",
+    image: "/kitchen-renovation-ceiling-and-cabinet-installation.jpg", imageAlt: "Kitchen renovation with ceiling and cabinet installation" },
+  { slug: "johannesburg", name: "Johannesburg", places: ["Rosebank", "Melville", "Linden", "Parktown"], homes: "established homes, flats and commercial buildings",
+    context: "Older Johannesburg homes and buildings often need careful repairs before anything new goes in. We handle both repairs and installations across the city.",
+    image: "/church-roof-painting-finished.avif", imageAlt: "Church roof freshly painted in Johannesburg" },
+  { slug: "randburg", name: "Randburg", places: ["Northcliff", "Ferndale", "Fontainebleau", "Randpark Ridge"], homes: "family homes and complexes",
+    context: "Randburg families and landlords call us for painting, repairs and finishing work that is done properly the first time.",
+    image: "/interior-painting-smooth-wall-finish-and-door.jpg", imageAlt: "Smooth painted interior walls in a Randburg home" },
+  { slug: "roodepoort", name: "Roodepoort", places: ["Florida", "Constantia Kloof", "Weltevreden Park", "Wilgeheuwel"], homes: "family homes and smallholdings",
+    context: "Roodepoort homes get repairs and installations from a team that arrives with a clear quote and finishes cleanly.",
+    image: "/roof-tile-repairs-and-maintenance-after.avif", imageAlt: "Tiled roof after repairs and maintenance" },
+  { slug: "pretoria", name: "Pretoria", places: ["Menlo Park", "Brooklyn", "Waterkloof", "Hatfield"], homes: "family homes, flats and offices",
+    context: "Pretoria homes and offices call us for painting, drywall, ceilings, tiling, waterproofing and roof work, from small repairs to full installations.",
+    image: "/shower-tiling-installation-with-corner-shelves.jpg", imageAlt: "Shower tiling installed in a Pretoria home" },
+  { slug: "centurion", name: "Centurion", places: ["Irene", "Eldoraigne", "Lyttelton", "Highveld"], homes: "estates and security complexes",
+    context: "Centurion estates and complexes use us for neat, reliable repairs and installations, from a leaking flat roof to a new ceiling design.",
+    image: "/torch-on-waterproofing-flat-roof-after.avif", imageAlt: "Flat roof after torch on waterproofing" },
+  { slug: "kempton-park", name: "Kempton Park", places: ["Bonaero Park", "Rhodesfield", "Glen Marais", "Birchleigh"], homes: "family homes and small commercial units",
+    context: "We repair and install finishes for Kempton Park homes and small businesses, from painting and plastering to waterproofing.",
+    image: "/drywall-partition-walls-office-passage.jpg", imageAlt: "Drywall partition walls in an office passage" },
+  { slug: "edenvale", name: "Edenvale", places: ["Eastleigh", "Dowerglen", "Hurlingham", "Lombardy East"], homes: "family homes and complexes",
+    context: "Edenvale homeowners and landlords call us for tidy, dependable repairs and installations.",
+    image: "/staircase-tiling-installation.jpg", imageAlt: "Staircase tiling installation" },
+  { slug: "bedfordview", name: "Bedfordview", places: ["Bedford Gardens", "Senderwood", "Linksfield", "Eastgate"], homes: "upmarket homes and apartments",
+    context: "Bedfordview homes get precise finishes from us, including smooth Rhinolite walls, tiling, ceilings and painting.",
+    image: "/passage-bulkhead-ceiling-and-smooth-painted-walls.jpg", imageAlt: "Passage bulkhead ceiling and smooth painted walls" },
+  { slug: "boksburg", name: "Boksburg", places: ["Parkrand", "Witfield", "Beyers Park", "Sunward Park"], homes: "family homes and commercial properties",
+    context: "Boksburg homes and commercial properties use Sithoma for repairs and installations, including roofs and waterproofing.",
+    image: "/red-tile-roof-restoration-and-painting.jpg", imageAlt: "Red tile roof restoration and painting" },
 ]
 
 export function getArea(slug: string) {
   return AREAS.find((a) => a.slug === slug)
 }
 
-export const SITE_TYPES = ["Home", "Business"] as const
-export const PROBLEMS = [
-  "Will not start",
-  "Starts then cuts out",
-  "No power output",
-  "Will not switch over",
-  "Smoke or burning smell",
-  "Noise or vibration",
-  "Leak",
-  "Service or maintenance",
-  "Something else",
-] as const
+export const WORK_TYPES = ["Repair", "New installation", "Not sure yet"] as const
+export const PROPERTY_TYPES = ["Home", "Business", "Complex or estate"] as const

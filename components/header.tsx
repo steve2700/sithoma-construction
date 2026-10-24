@@ -10,9 +10,8 @@ import { AREAS } from "@/lib/areas"
 import { SITE } from "@/lib/site"
 
 const links = [
-  { href: "/home-generator-repairs", label: "Homes" },
-  { href: "/business-generator-repairs", label: "Business" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/cost-guides", label: "Cost guides" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ]
@@ -30,25 +29,30 @@ export function Header() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
-  const item = "px-3 py-2 font-display text-lg font-semibold text-ink/80 transition hover:text-ink hover:underline hover:decoration-signal hover:decoration-4 hover:underline-offset-8"
+  const item = "px-3 py-2 font-display text-[15px] font-semibold text-ink/80 transition hover:text-ink hover:underline hover:decoration-signal hover:decoration-4 hover:underline-offset-8"
   const panel = "invisible absolute left-0 top-full translate-y-2 rounded-2xl bg-white p-3 text-ink opacity-0 shadow-2xl ring-1 ring-ink/10 transition duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
-  const sub = "block rounded-xl px-4 py-2.5 font-display text-lg font-semibold hover:bg-signal"
+  const sub = "block rounded-xl px-4 py-2.5 font-display text-[15px] font-semibold hover:bg-signal"
   return (
-    <header className="sticky top-0 z-50 bg-white text-ink shadow-md shadow-ink/5">
-      <div aria-hidden="true" className="hazard h-2" />
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-5">
+    <header className="sticky top-0 z-50 border-b border-ink/5 bg-white/95 text-ink shadow-sm shadow-ink/5 backdrop-blur">
+      <div className="hidden bg-ink text-xs text-silver md:block">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-1.5">
+          <span>{SITE.tagline}</span>
+          <a href={`tel:${SITE.phoneTel}`} className="font-semibold text-signal hover:underline">{SITE.phoneDisplay}</a>
+        </div>
+      </div>
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-5">
         <Logo />
         <nav aria-label="Main" className="hidden items-center lg:flex">
           <div className="group relative">
             <Link href="/services" className={item}>Services<Caret /></Link>
-            <div className={`${panel} w-[28rem]`}>
+            <div className={`${panel} w-[27rem]`}>
               {SERVICES.map((s) => <Link key={s.slug} href={`/services/${s.slug}`} className={sub}>{s.name}</Link>)}
             </div>
           </div>
           <div className="group relative">
-            <Link href="/service-areas" className={item}>Areas<Caret /></Link>
-            <div className={`${panel} grid w-[28rem] grid-cols-2`}>
-              {AREAS.map((a) => <Link key={a.slug} href={`/service-areas/${a.slug}`} className={sub}>{a.name}</Link>)}
+            <Link href="/areas" className={item}>Areas<Caret /></Link>
+            <div className={`${panel} grid w-[26rem] grid-cols-2`}>
+              {AREAS.map((a) => <Link key={a.slug} href={`/areas/${a.slug}`} className={sub}>{a.name}</Link>)}
             </div>
           </div>
           {links.map((l) => <Link key={l.href} href={l.href} className={item}>{l.label}</Link>)}
@@ -65,7 +69,7 @@ export function Header() {
         </div>
       </div>
       {open && (
-        <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-[80px] overflow-y-auto bg-white px-5 pb-28 pt-4 lg:hidden">
+        <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-[76px] overflow-y-auto bg-white px-5 pb-28 pt-4 lg:hidden">
           <details className="border-b border-ink/10 py-4">
             <summary className="cursor-pointer font-display text-3xl font-bold marker:hidden">Services<Caret /></summary>
             <div className="mt-3 flex flex-col">
@@ -76,8 +80,8 @@ export function Header() {
           <details className="border-b border-ink/10 py-4">
             <summary className="cursor-pointer font-display text-3xl font-bold marker:hidden">Areas<Caret /></summary>
             <div className="mt-3 flex flex-col">
-              <Link href="/service-areas" className="py-2 text-lg text-graphite">All areas</Link>
-              {AREAS.map((a) => <Link key={a.slug} href={`/service-areas/${a.slug}`} className="py-2 text-lg text-graphite hover:text-ink">{a.name}</Link>)}
+              <Link href="/areas" className="py-2 text-lg text-graphite">All areas</Link>
+              {AREAS.map((a) => <Link key={a.slug} href={`/areas/${a.slug}`} className="py-2 text-lg text-graphite hover:text-ink">{a.name}</Link>)}
             </div>
           </details>
           {links.map((l) => <Link key={l.href} href={l.href} className="block border-b border-ink/10 py-4 font-display text-3xl font-bold">{l.label}</Link>)}

@@ -1,8 +1,8 @@
-# Emergency Generator Repairs. Search engines and AI assistants are welcome.
+# Sithoma Construction and Projects. Search engines and AI assistants are welcome.
 User-agent: *
 Allow: /
 
-Sitemap: https://www.emergencygeneratorrepairs.co.za/sitemap.xml
+Sitemap: https://www.sithomaconstruction.co.za/sitemap.xml
 
 # AI search and assistant crawlers
 User-agent: GPTBot
